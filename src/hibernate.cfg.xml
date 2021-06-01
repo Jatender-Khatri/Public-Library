@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "hibernate.dialect">
+         org.hibernate.dialect.MySQL5InnoDBDialect
+      </property>
+      
+      <property name = "hibernate.connection.driver_class">
+         com.mysql.jdbc.Driver
+      </property>
+      
+      <!-- Assume university is the database name -->
+      
+      <property name = "hibernate.connection.url">
+         jdbc:mysql://localhost:3306/publiclibrary
+      </property>
+      
+      <property name = "hibernate.connection.username">
+         root
+      </property>
+      
+      <property name = "hibernate.connection.password">
+         111111
+      </property>
+      <property name = "show_sql">
+         true
+      </property>
+      <property name = "hbm2ddl.auto">
+         update
+      </property>
+      <!-- List of XML mapping files -->
+      <mapping class = "com.model.CategoryEntity"/>
+      <mapping class = "com.model.AuthorEntity"/>
+      <mapping class = "com.model.UserEntity"/>
+      <mapping class = "com.model.RentEntity"/>
+      <mapping class = "com.model.BookEntity"/>
+      <mapping class = "com.model.RentDetailEntity"/>
+   </session-factory>
+</hibernate-configuration>
